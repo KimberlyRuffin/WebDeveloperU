@@ -11,162 +11,319 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Internal JavaScript -->
+    <script type = "text/javascript">
+    function validateForm () {
+        let x1 = document.forms["contactForm"]["name"].value;
+        if  (x1 == "") {
+            alert("Name must be filled in");
+            return false;
+        }
+        let x2 = document.forms["contactForm"]["email"].value;
+        if  (x2 == "") {
+            alert("Email must be filled in");
+            return false;
+        }
+        let mailformat = new RegEXP('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+        if (!document.forms["contactForm"]["email"].value.match(mailformat))
+        {
+            alert("You have entered an invalid email address");
+            return false;
+        }
+        let x3 = document.forms["contactForm"]["phone"].value;
+        if  (x3 == "") {
+            alert("Phone must be filled in");
+            return false;
+        }
+        let x4 = document.forms["contactForm"]["message"].value;
+        if  (x4 == "") {
+            alert("Message must be filled in");
+            return false;
+        }
+    }
+    function getRadioValue(radio) {
+        alert("You selected " + radio.value);
+    }
+    function getCheckboxClick(checkbox) {
+        alert("You selected " + checkbox.value);
+    }
+    function getMenuSelection(menu) {
+        alert("You selected " + menu.value);
+    }
+    function getTextboxEntry(textbox) {
+        alert("You selected " + textbox.value);
+    }
+    </script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <style>
+    ul {
+             text-align: center;
+        }
+        .parent > ul {
+             text-align: left;
+             display: inline-block;
+        }
+        .list-text-color {
+            color: white;
+            font-size: 1.3em;
+        }
+        .submit_button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: 0.3s;
+        }
+      .submit_button:hover {
+        opacity:1
+      }
+    </style>
 </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top">Top</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
-                    </ul>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Top</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#hobbyist featured picks">Hobbyist Featured Picks</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#gamer's workshop">Gamer's Workshop</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about me">About me</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#hobbyiest haven crew">Hobbyist Haven Crew</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <h1 class="masthead-heading text-uppercase mb-0">Gamer's Hobbyist</h1>
+            <br><br>
+            <!-- Masthead Heading-->
+            <img class="masthead-avatar mb-5" src="assets/img/Gamers hob logo.jfif" alt="..." />
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">Website created by Kimberly Ruffin, Strayer University</p>
+        </div>
+    </header>
+    <!-- Portfolio Section-->
+    <section class="page-section hobbyist featured picks" id="hobbyist featured picks">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Hobbyist Featured Picks</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row justify-content-center">
+                <!-- Portfolio Item 1-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/spiritfarer.jfif" alt="..." />
+                    </div>
+                </div>
+                <!-- Portfolio Item 2-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/cuphead.png" alt="..." />
+                    </div>
+                </div>
+                <!-- Portfolio Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/hollow knight silksong.jfif" alt="..." />
+                    </div>
+                </div>
+                <!-- Portfolio Item 4-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/Hellblade.jfif" alt="..." />
+                    </div>
+                </div>
+                <!-- Portfolio Item 5-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/Hades2.jfif" alt="..." />
+                    </div>
+                </div>
+                <!-- Portfolio Item 6-->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/Logo_of_Stardew_Valley.png" alt="..." />
+                    </div>
                 </div>
             </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <h1 class="masthead-heading text-uppercase mb-0">Gamer's Hobbyist</h1>
-                <br><br>
-                <!-- Masthead Heading-->
-                <img class="masthead-avatar mb-5" src="assets/img/Gamers hob logo.jfif" alt="..." />
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Website created by Kimberly Ruffin, Strayer University</p>
+        </div>
+    </section>
+    <!-- Gamer's Workshop Section-->
+    <section class="page-section bg-info text-white mb-0" id="gamer's workshop">
+        <div class="container">
+            <!-- Gamer's Workshop Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-white">Gamer's Workshop</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+
             </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/spiritfarer.jfif" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cuphead.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/hollow knight silksong.jfif" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/Hellblade.jfif" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/Hades2.jfif" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/Logo_of_Stardew_Valley.png" alt="..." />
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div>
+            <ul>
+                <li><a href="https://thunderlotusgames.com/games/spiritfarer" alt="spiritfarer"><span class="list-text-color">Spiritfarer Offical Site</span></a></li>
+                <li><a href="https://cupheadgame.com/" alt="cuphead"><span class="list-text-color">Cuphead Offical Site</span></a></li>
+                <li><a href="https://hollowknightsilksong.com/" alt="hollowknight2"><span class="list-text-color">Hollow Knight: Silksong Offical Site</span></a></li>
+                <li><a href="https://www.hellblade.com/" alt="Hellblade"><span class="list-text-color">Hellblade: Senua's Sacrifice Offical Site</span></a></li>
+                <li><a href="https://www.supergiantgames.com/games/hades-ii/" alt="Hades2"><span class="list-text-color">Hades II Offical Site</span></a></li>
+                <li><a href="https://www.stardewvalley.net/" alt="stardewvalley"><span class="list-text-color">Stardew Valley Offical Site</span></a></li>
+            </ul>
+        </div>
+    </section>
+    <!-- About Section-->
+    <section class="page-section bg-primary text-white mb-0" id="about me">
+        <div class="container">
+            <!-- About Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-white">About Me</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
             </div>
-        </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Welcome to Gamer's Hobbyist is a website dedicated to promoting and supporting indie game developers.Here, you'll find detailed game reviews, exclusive interviews with developers, and information on where to purchase and play featured titles.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">We also foster community engagement through user rating and interative Q&A sessions, allowing players to connect with each other and with developers. Join us as we showcase the creativity and innovation of the idie game world.</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://www.ign.com/playlist/rchnemesis/lists/top-100-indie-games" >Link to Top 100 indie games of all time!</a>
-                </div>
+            <!-- About Section Content-->
+            <div class="row">
+                <div class="col-lg-4 ms-auto"><p class="lead">Welcome to Gamer's Hobbyist is a website dedicated to promoting and supporting indie game developers.Here, you'll find detailed game reviews, exclusive interviews with developers, and information on where to purchase and play featured titles.</p></div>
+                <div class="col-lg-4 me-auto"><p class="lead">We also foster community engagement through user rating and interative Q&A sessions, allowing players to connect with each other and with developers. Join us as we showcase the creativity and innovation of the idie game world.</p></div>
             </div>
-        </section>
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+            <!-- About Section Button-->
+            <div class="text-center mt-4">
+                <a class="btn btn-xl btn-outline-light" href="https://www.ign.com/playlist/rchnemesis/lists/top-100-indie-games">Link to Top 100 indie games of all time!</a>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section-->
+    <section class="page-section" id="hobbyiest haven crew">
+        <div class="container">
+            <!-- Contact Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Hobbyiest Haven Crew</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Contact Section Form-->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form id="contactForm" action="./php/formSubmit.php" onsubmit="return validateForm()" method="post">
+                        <!--Radio Buttons for joining -->
+                        <div>
+                            <p>
+                                <h5>Please select your preferred method of communication:</h5>
+                                <input type="radio" id="message_type" name="message_type" value="email" onchange= "getRadioValue(this)">
+                                <label for="first">Email</label><br />
+                                <input type="radio" id="gamer_talk" name="gamer_talk" value="discord" onchange= "getRadioValue(this)">
+                                <label for="second">Discord</label><br />
+                                <input type="radio" id="site_inbox" name="site_inbox" value="site direct message" onchange= "getRadioValue(this)">
+                                <label for="third">Site Direct Message</label><br />
+                        </div>
+                        <!--drop down-->
+                        <div>
+                            <p>
+                                <h5>Please select the type of member you are: </h5>
+                                <label for="member_type">Member: </label>
+                                <select name="member_type" id="member_type" onchange="getMenuSelection(this)">
+                                    <option value=" " selected>Member Type</option>
+                                    <option value="Gamer">Gamer</option>
+                                    <option value="Developer">Developer</option>
+                                    <option value="Artist">Artist</option>
+                                    <option value="Reviewer">Reviewer</option>
+                                    <option value="Other">Other (Please Specify)</option>
+                                </select>
+                                <input type="text" id="other_member" onchange="getTextboxEntry(this)" />
+
+                        </div>
+
+                        <!-- Check box 1 -->
+                        <div>
+                            <p><h5>What skills or experience do you have that you can contribute to the community?</h5></p>
+                            <input type="checkbox" id="test_game" name="test_game" value="game testing" onclick="getCheckboxClick(this)"/>
+                            <label for="test_game">Game Testing</label><br />
+                            <input type="checkbox" id="comp_pro" name="comp_pro" value="programing" onclick="getCheckboxClick(this)" />
+                            <label for="comp_pro">Programing</label><br />
+                            <input type="checkbox" id="art_des" name="art_des" value="art/design" onclick="getCheckboxClick(this)" />
+                            <label for="art_des">Art/Design</label><br />
+                            <input type="checkbox" id="write_story" name="write_story" value="writing/storytelling" onclick="getCheckboxClick(this)" />
+                            <label for="write_story">Writing/Storytelling</label><br />
+                            <input type="checkbox" id="comm_man" name="comm_man" value="community management" onclick="getCheckboxClick(this)" />
+                            <label for="comm_man">Community Management</label><br />
+                            <input type="checkbox" id="otherSkills " name="skills" value="otherSkills" onclick="getCheckboxClick(this)" />
+                            <label for="otherSkills">Other</label><br />
+                            <input type="text" id="other_Skills" />
+                        </div>
+
+                        <!-- Check box 2 -->
+                        <div>
+                            <p><h5>Community Guidelines</h5></p>
+                            <p>Be Respectful</p>
+                            <p>Foster Inclusivity</p>
+                            <p>Protect Your Privacy and Others</p>
+                            <p>No Spamming or Scamming</p>
+                            <p>Respect Copyright and Intellectual Property</p>
+
+                            <input type="checkbox" id="commun_guide" name="commun_guide" value="community guidelines" />
+                            <label for="commun_guide">I agree to abide by the community and respect the rules of The Gamer's Hobbyist</label><br />
+                        </div>
+
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
@@ -210,250 +367,250 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
-                        </form>
-                    </div>
+                            <input type="submit" id="btn" class="submit_button" value="Send Email to Instructor">
+                    </form>
                 </div>
             </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            2215 John Daniel Drive
-                            <br />
-                            Clark, MO 65243
-                        </p>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
-                    </div>
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                        <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
         </div>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Spiritfarer</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/spiritfarer.jfif" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Spiritfarer is a cozy management game about dying. You play Stella, ferrymaster to the deceased, a Spiritfarer. Build a boat to explore the world, then befriend and care for spirits before finally releasing them into the afterlife. Content Rating: T, Language, Suggestive Themes, Violent References, Use of Tobacco. Developers: Thunder Lotus. Platforms:Xbox One, PS4, PC,and Switch. Initial Release: Aug 18, 2020.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        2215 John Daniel Drive
+                        <br />
+                        Clark, MO 65243
+                    </p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Around the Web</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                    <p class="lead mb-0">
+                        Freelance is a free to use, MIT licensed Bootstrap theme created by
+                        <a href="http://startbootstrap.com">Start Bootstrap</a>
+                        .
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
+    </div>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio Modal 1-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Spiritfarer</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
                                 </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/spiritfarer.jfif" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4">Spiritfarer is a cozy management game about dying. You play Stella, ferrymaster to the deceased, a Spiritfarer. Build a boat to explore the world, then befriend and care for spirits before finally releasing them into the afterlife. Content Rating: T, Language, Suggestive Themes, Violent References, Use of Tobacco. Developers: Thunder Lotus. Platforms:Xbox One, PS4, PC,and Switch. Initial Release: Aug 18, 2020.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Cuphead</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cuphead.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Cuphead and Mugman traverse strange worlds, acquire new weapons, learn powerful supermoves and uncover hidden secrets in Cuphead.  Content Rating: E ,Fantasy Violence, Mild Language, Use of Alcohol and Tobacco. Developers: StudioMDHRContent. Platforms:Xbox One, PS4, PC,and Switch. Initial Release: Sep 29, 2017.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+    </div>
+    <!-- Portfolio Modal 2-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Cuphead</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
                                 </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cuphead.png" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4">Cuphead and Mugman traverse strange worlds, acquire new weapons, learn powerful supermoves and uncover hidden secrets in Cuphead.  Content Rating: E ,Fantasy Violence, Mild Language, Use of Alcohol and Tobacco. Developers: StudioMDHRContent. Platforms:Xbox One, PS4, PC,and Switch. Initial Release: Sep 29, 2017.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Hollow Knight: Silksong</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/hollow knight silksong.jfif" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Hollow Knight: Silksong is the epic sequel to the award winning Hollow Knight. As the lethal hunter Hornet, journey to all-new lands, discover new powers, battle vast hordes of bugs and beasts and uncover ancient secrets tied to your nature and your past. Content Rating: E ,Fantasy Violence, Mild Blood. Developers: Team Cherry Platforms:Xbox One,Xbox Series X/S, PS4,PS5, PC, Switch and Switch 2. Initial Release: Sep 4, 2025.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+    </div>
+    <!-- Portfolio Modal 3-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Hollow Knight: Silksong</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
                                 </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/hollow knight silksong.jfif" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4">Hollow Knight: Silksong is the epic sequel to the award winning Hollow Knight. As the lethal hunter Hornet, journey to all-new lands, discover new powers, battle vast hordes of bugs and beasts and uncover ancient secrets tied to your nature and your past. Content Rating: E ,Fantasy Violence, Mild Blood. Developers: Team Cherry Platforms:Xbox One,Xbox Series X/S, PS4,PS5, PC, Switch and Switch 2. Initial Release: Sep 4, 2025.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Hellblade: Senua's Sacrifice</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Hellblade.jfif" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Hellblade: Senua's Sacrifice tells of a warrior's brutal journey into myth and madness. Set in the Viking age, a broken Celtic warrior embarks on a haunting vision quest into Viking Hell to fight for the soul of her dead lover.Content Rating: M ,Strong Language, Blood and Gore, Intense Violence. Developers: Ninja Theory. Platforms:Xbox One,Xbox Series X/S, PS4, PC,and Switch. Initial Release: Aug 8, 2017.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+    </div>
+    <!-- Portfolio Modal 4-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Hellblade: Senua's Sacrifice</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
                                 </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Hellblade.jfif" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4">Hellblade: Senua's Sacrifice tells of a warrior's brutal journey into myth and madness. Set in the Viking age, a broken Celtic warrior embarks on a haunting vision quest into Viking Hell to fight for the soul of her dead lover.Content Rating: M ,Strong Language, Blood and Gore, Intense Violence. Developers: Ninja Theory. Platforms:Xbox One,Xbox Series X/S, PS4, PC,and Switch. Initial Release: Aug 8, 2017.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Hades II</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Hades2.jfif" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Hades II is the sequel to Supergiant's hit game Hades, mixing engaging story-telling and roguelite action elements for an engaging dungeon-crawling experience. Battle beyond the Underworld to vanquish the Titan of Time as the Princess of the Dead in this bewitching sequel to the original rogue-like dungeon crawler. Hades II lets players explore a bigger, deeper mythic world with the full might of Olympus at their call in a story that reacts to their every setback and accomplishment.Content Rating: T ,Mild Language, Violence, Suggestive Themes, Blood, Alcohol Reference. Developers: Supergiant Games. Platforms: PC, Switch and Switch 2. Initial Release: May 5, 2024.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+    </div>
+    <!-- Portfolio Modal 5-->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Hades II</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
                                 </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Hades2.jfif" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4">Hades II is the sequel to Supergiant's hit game Hades, mixing engaging story-telling and roguelite action elements for an engaging dungeon-crawling experience. Battle beyond the Underworld to vanquish the Titan of Time as the Princess of the Dead in this bewitching sequel to the original rogue-like dungeon crawler. Hades II lets players explore a bigger, deeper mythic world with the full might of Olympus at their call in a story that reacts to their every setback and accomplishment.Content Rating: T ,Mild Language, Violence, Suggestive Themes, Blood, Alcohol Reference. Developers: Supergiant Games. Platforms: PC, Switch and Switch 2. Initial Release: May 5, 2024.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Stardew Valley</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Logo_of_Stardew_Valley.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">In the open-ended country life RPG Stardew Valley, you've inherited your grandfather's old farm plot. Armed with hand-me-down tools and a few coins, you set out to begin your new life.Content Rating: E ,Mild Language, Fantasy Violence, Simulated Gambling, Mild Blood, Use of Tobacco and/or Alcohol. Developers: ConcernedApe, Sickhead Games. Platforms: Platforms:Xbox One, PS4, PC,Switch and Switch 2. Initial Release: Feb 26, 2016..</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+    </div>
+    <!-- Portfolio Modal 6-->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Stardew Valley</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
                                 </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Logo_of_Stardew_Valley.png" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4">In the open-ended country life RPG Stardew Valley, you've inherited your grandfather's old farm plot. Armed with hand-me-down tools and a few coins, you set out to begin your new life.Content Rating: E ,Mild Language, Fantasy Violence, Simulated Gambling, Mild Blood, Use of Tobacco and/or Alcohol. Developers: ConcernedApe, Sickhead Games. Platforms: Platforms:Xbox One, PS4, PC,Switch and Switch 2. Initial Release: Feb 26, 2016.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
 </html>
